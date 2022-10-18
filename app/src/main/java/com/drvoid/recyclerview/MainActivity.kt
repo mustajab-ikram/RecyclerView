@@ -13,20 +13,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var todoList = mutableListOf(
-            Todo("Task1", true),
-            Todo("Task2", true),
-            Todo("Task3", true),
-            Todo("Task4", false),
-            Todo("Task5", true),
-            Todo("Task6", false),
-            Todo("Task7", true),
-            Todo("Task8", false),
-            Todo("Task9", true)
-        )
-        val adapter = TodoAdapter(todoList)
-        val rvTodos = findViewById<RecyclerView>(R.id.rvTodo)
-        rvTodos.adapter = adapter
-        rvTodos.layoutManager = LinearLayoutManager(this)
+        val firstFragment = FirstFragment()
+        val secondFragment = SecondFragment()
+        val btn1 = findViewById<Button>(R.id.btnFrg1)
+        val btn2 = findViewById<Button>(R.id.btnFrg2)
+
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.frg, firstFragment)
+            commit()
+        }
+
+        btn1.setOnClickListener {
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.frg, firstFragment)
+                addToBackStack(null)
+                commit()
+            }
+        }
+        btn2.setOnClickListener {
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.frg, secondFragment)
+                addToBackStack(null)
+                commit()
+            }
+        }
     }
 }

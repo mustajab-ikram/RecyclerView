@@ -7,40 +7,32 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnNext"
+        android:id="@+id/btnFrg1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next Activity"
-        app:layout_constraintBottom_toTopOf="@+id/rvTodo"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Fragment 1"
+        app:layout_constraintEnd_toStartOf="@+id/btnFrg2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvTodo"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/etTodo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnNext" />
-
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnFrg2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ADD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="Fragment 2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnFrg1"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@id/etTodo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Add a to do list item"
+    <FrameLayout
+        android:id="@+id/frg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnAdd"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFrg1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
